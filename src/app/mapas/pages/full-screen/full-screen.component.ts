@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl'
 
-import { environment } from '../../../../environments/environment';
-
 @Component({
   selector: 'app-full-screen',
   templateUrl: './full-screen.component.html',
