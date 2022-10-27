@@ -29,7 +29,7 @@ interface MarcadorColor {
     `
   ]
 })
-export class MarcadoresComponent implements AfterViewInit, OnDestroy {
+export class MarcadoresComponent implements AfterViewInit {
 
   @ViewChild('mapa') divMapa!: ElementRef;
 
@@ -58,10 +58,6 @@ export class MarcadoresComponent implements AfterViewInit, OnDestroy {
     // new mapboxgl.Marker()
     //   .setLngLat(this.center)
     //   .addTo(this.mapa);
-  }
-
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
   }
 
   agregarMarker() {
