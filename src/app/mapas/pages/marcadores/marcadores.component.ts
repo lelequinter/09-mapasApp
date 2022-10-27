@@ -5,6 +5,7 @@ interface MarcadorColor {
   color: string;
   marker: mapboxgl.Marker;
 }
+
 @Component({
   selector: 'app-marcadores',
   templateUrl: './marcadores.component.html',
@@ -71,13 +72,27 @@ export class MarcadoresComponent implements AfterViewInit, OnDestroy {
       .setLngLat(this.center)
       .addTo(this.mapa);
 
+    // const lngLat = nuevoMarcador.getLngLat();
+    // console.log('lngLat', lngLat);
+
     this.marcadores.push({
       color,
       marker: nuevoMarcador,
     })
   }
 
-  irMarcador() {
+  irMarcador( marker: mapboxgl.Marker ) {
+    this.mapa.flyTo({
+      center: marker.getLngLat()
+    })
+  }
+
+  guardarMarcadoresLocalStorage(){
 
   }
+
+  leerLocalStorage(){
+
+  }
+
 }
